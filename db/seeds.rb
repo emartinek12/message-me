@@ -7,3 +7,12 @@ puts "Creating users"
 end
 
 puts "Users have been created"
+puts "Now creating messages"
+
+users = User.all
+
+10.times do
+  Message.create(body: Faker::Movie.quote, user_id: users.sample.id)
+end
+
+puts "Messages have been created"
